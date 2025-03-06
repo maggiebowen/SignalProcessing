@@ -21,10 +21,14 @@ noise  = noiseamp * randn(size(time));
 signal = ampl + noise;
 
 % initialize filtered signal vector
-filtsig = zeros(size(signal));
+    % causes weird drop offs for beginning and end cases
+% filtsig = zeros(size(signal));
+    % causes noisy edges
+filtsig = signal;
 
 % implement the running mean filter
-k = 20; % filter window is actually k*2+1
+% make it even smoother by increasing k
+k = 40; % filter window is actually k*2+1
 for i=k+1:n-k-1
     % each point is the average of k surrounding points
     filtsig(i) = mean(signal(i-k:i+k));

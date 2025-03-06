@@ -28,7 +28,8 @@ signal = ampl + noise;
 fwhm = 25; % in ms
 
 % normalized time vector in ms
-k = 100;
+    % adjust k so that curve reaches near zero on either side
+k = 40;
 gtime = 1000*(-k:k)/srate;
 
 % create Gaussian window
