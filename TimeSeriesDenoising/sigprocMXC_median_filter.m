@@ -33,6 +33,7 @@ threshold = 40;
 
 % find data values above the threshold
 suprathresh = find( signal>threshold );
+% suprathresh = 1:n;
 
 % initialize filtered signal
 filtsig = signal;

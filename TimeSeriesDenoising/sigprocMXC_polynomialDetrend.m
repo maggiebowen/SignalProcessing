@@ -8,7 +8,7 @@
 
 %% polynomial intuition
 
-order = 0;
+order = 3;
 x = linspace(-15,15,100);
 
 y = zeros(size(x));
